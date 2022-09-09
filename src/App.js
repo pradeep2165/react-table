@@ -1,11 +1,10 @@
 import "./App.css";
-
-import { RowSelection } from "./conponents/RowSelection";
+import { ColumnOrder } from "./conponents/ColumnOrder";
 
 function App() {
   return (
     <div>
-      <RowSelection />
+      <ColumnOrder />
     </div>
   );
 }
