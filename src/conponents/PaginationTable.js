@@ -8,14 +8,14 @@ export const PaginationTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
 
-  const { getTableProps, getTableBodyProps, headerGroups, page, nextPage, previousPage, canPreviousPage, canNextPage, prepareRow } = useTable(
+  const { getTableProps, getTableBodyProps, headerGroups, page, nextPage, previousPage, canPreviousPage, canNextPage, prepareRow, pageOptions, state } = useTable(
     {
       columns,
       data,
     },
     usePagination
   );
-
+  const { pageIndex } = state;
   return (
     <>
       <table {...getTableProps()}>
@@ -42,6 +42,12 @@ export const PaginationTable = () => {
         </tbody>
       </table>
       <div>
+        <span>
+          Page{" "}
+          <strong>
+            {pageIndex + 1} of {pageOptions.length}
+          </strong>{" "}
+        </span>
         <button onClick={() => previousPage()} disabled={!canPreviousPage}>
           Previous
         </button>
