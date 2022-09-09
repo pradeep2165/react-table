@@ -48,6 +48,7 @@ export const GROUPED_COLUMNS = [
     Footer: "Id",
     accessor: "id",
     Filter: ColumnFilter,
+    disableFilters: true,
   },
   {
     Header: "Name",
